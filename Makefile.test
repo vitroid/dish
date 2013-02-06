@@ -1,0 +1,4 @@
+all:wait1 wait2 wait3 wait4 wait5 wait6 wait7 wait8 wait9
+wait%: Makefile.test
+	sleep 1000
+

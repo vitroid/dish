@@ -1,0 +1,31 @@
+#
+#without SHELL; on vittel: 
+#gmake -f Makefile.sample wheel.gif
+#263.248u 1.756s 6:44.76 65.4%   608+494k 2+4364io 0pf+0w
+#               ^^^^^^^
+#without SHELL; on k2:
+#gmake -f Makefile.sample wheel.gif
+#538.14u 4.96s 15:57.46 56.7%
+#              ^^^^^^^
+#with SHELL
+#gmake -j 10 -f Makefile.sample wheel.gif SHELL="/usr/local/matto/bin/dish k1 2 k2 2 j1 j2 j3"
+#4.50u 5.93s 2:44.59 6.3%
+#            ^^^^^^^
+#See the turn-around time!
+#(user time is fictitious because all the processes are executed on remote hosts.)
+
+wheel.gif: wheel00.gif wheel01.gif wheel02.gif wheel03.gif wheel04.gif\
+           wheel05.gif wheel06.gif wheel07.gif wheel08.gif wheel09.gif\
+           wheel10.gif wheel11.gif wheel12.gif wheel13.gif wheel14.gif\
+           wheel15.gif wheel16.gif wheel17.gif wheel18.gif wheel19.gif\
+           wheel20.gif wheel21.gif wheel22.gif wheel23.gif wheel24.gif\
+           wheel25.gif wheel26.gif wheel27.gif wheel28.gif wheel29.gif\
+           wheel30.gif wheel31.gif wheel32.gif wheel33.gif wheel34.gif\
+           wheel35.gif wheel36.gif
+	gifmerge -l0 -5 $^ > $@
+wheel%.ppm: wheel.pov wheel.ini
+	povray +FP +SF$* +EF$* +W120 +H90 wheel.ini +Owheel.ppm
+%.gif:	%.ppm
+	ppmquant 255 $< | ppmtogif > $@
+clean:
+	-rm *.gif *.ppm
