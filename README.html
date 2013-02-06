@@ -7,11 +7,11 @@
 <h1>dish --- distributed shell</h1>
 <img src="wheel.gif">
 current version: 1.22
-<ul>
+<!--<ul>
 <li><a href="dish_1.20-1_i386.deb">dish_1.20-1_i386.deb</a>
 <li><a href="dish-1.20-1_i386.rpm">dish-1.20-1_i386.rpm</a>
 <li><a href="dish-1.22.tar.gz">dish-1.22.tar.gz</a>
-</ul>
+</ul>-->
 <hr>
 Dish is a distributed shell. It is designed to replace 'sh -c' command
 used in GNU make. It enables us to execute
@@ -111,14 +111,17 @@ make -j 6 all SHELL="dish -g clients"
 </pre>
 
 <h2>Note</h2>
+<p>
 Standard remote shell command ('rsh') does not return the status of
 remote execution. In dish, ersh is used in place of standard rsh. Ersh 
 is written by Maarten Litmaath in 1994. With -s option, dish also uses ssh(secure shell).
-In this case, ssh server must be installed in the remote host.<p>
+In this case, ssh server must be installed in the remote host.</p>
 
-On linux, make is GNU make. While in general make is not GNU
+<p>This limitation will be avoided by using ssh in version 1.22.</p>
+
+<p>On linux, make is GNU make. While in general make is not GNU
 make. Please consult administrator whether your machine has GNU make
-command.<p>
+command.</p>
 
 Dish creates a work directory named .dish in your home directory for exclusive process control.<p>
 
@@ -133,6 +136,8 @@ this. Rewrinting dish by C-language will solve this problem.
 <a href="http://www3.informatik.tu-muenchen.de/~zimmerms/ppmake/">PVM Parallel Make (ppmake)</a>
 <h2>Change Log</h2>
 <dl>
+<dt>v1.22 Feb.6, 2013
+<dd>Moved to GitHub. 
 <dt>v1.21 Feb.19, 2003
 <dd>-g|--group option is added.
 </dl>
@@ -143,10 +148,6 @@ I'd like to thank to the following people who gave me a lot of valuable opinions
 </ul>
 <hr>
 Any comments and questions to <a
-href="mailto:matto@aqua.chem.nagoya-u.ac.jp">matto@aqua.chem.nagoya-u.ac.jp</a>.
+href="mailto:vitroid@gmail.com">vitroid@gmail.com</a>.
 <p>
-$Id: README,v 1.1 2000/04/14 05:53:25 matto Exp $
-<!-- hhmts start -->
-Last modified: Mon Feb 28 14:47:11 JST 2000
-<!-- hhmts end -->
 </body> </html>
