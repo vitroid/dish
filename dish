@@ -389,7 +389,8 @@ trap 'echo "Interrupted" 1>&2'  1 2 15
 cwd=${PWD-`pwd`}
 localhost=`hostname`
 shorthost=`echo $localhost | sed -e 's/\..*//'`
-ersh="ersh31"
+#ersh="ersh31"
+ersh="ssh"
 script=`basename $0`
 case $script in
 	on)
