@@ -2,3 +2,7 @@ seisei
 .DS_Store
 dish.spec
 on
+*.png
+*.gif
+README.html
+READMEJ.html

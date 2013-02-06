@@ -14,18 +14,16 @@
 #See the turn-around time!
 #(user time is fictitious because all the processes are executed on remote hosts.)
 
-wheel.gif: wheel00.gif wheel01.gif wheel02.gif wheel03.gif wheel04.gif\
-           wheel05.gif wheel06.gif wheel07.gif wheel08.gif wheel09.gif\
-           wheel10.gif wheel11.gif wheel12.gif wheel13.gif wheel14.gif\
-           wheel15.gif wheel16.gif wheel17.gif wheel18.gif wheel19.gif\
-           wheel20.gif wheel21.gif wheel22.gif wheel23.gif wheel24.gif\
-           wheel25.gif wheel26.gif wheel27.gif wheel28.gif wheel29.gif\
-           wheel30.gif wheel31.gif wheel32.gif wheel33.gif wheel34.gif\
-           wheel35.gif wheel36.gif
-	gifmerge -l0 -5 $^ > $@
-wheel%.ppm: wheel.pov wheel.ini
-	povray +FP +SF$* +EF$* +W120 +H90 wheel.ini +Owheel.ppm
-%.gif:	%.ppm
-	ppmquant 255 $< | ppmtogif > $@
+wheel.gif: wheel00.png wheel01.png wheel02.png wheel03.png wheel04.png\
+           wheel05.png wheel06.png wheel07.png wheel08.png wheel09.png\
+           wheel10.png wheel11.png wheel12.png wheel13.png wheel14.png\
+           wheel15.png wheel16.png wheel17.png wheel18.png wheel19.png\
+           wheel20.png wheel21.png wheel22.png wheel23.png wheel24.png\
+           wheel25.png wheel26.png wheel27.png wheel28.png wheel29.png\
+           wheel30.png wheel31.png wheel32.png wheel33.png wheel34.png\
+           wheel35.png wheel36.png
+	convert -loop 1 -delay 6 $^ $@
+wheel%.png: wheel.pov wheel.ini
+	povray +FN +SF$* +EF$* +W120 +H90 wheel.ini +Owheel.png
 clean:
-	-rm *.gif *.ppm
+	-rm *.png *.ppm
