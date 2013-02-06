@@ -1,0 +1,23 @@
+Summary: dish (Distributed shell)
+Name: dish
+Version: @VERSION@
+Release: 1
+Copyright: GPL
+Group: Utility/Network
+Source: http://www.chem.nagoya-u.ac.jp/matto/90/70Proj/dish/dish-@VERSION@.tar.gz
+%description
+Dish is a distributed shell. It is designed to replace 'sh -c' command
+used in GNU make. It enables us to execute
+many procedures at a time over network-linked heterogeneous
+workstation cluster.
+
+Dish behaves as "on" command when it is aliased.
+%prep
+%setup -c
+%build
+%install
+cd dish-@VERSION@
+make install
+%files
+/usr/bin/dish
+/usr/bin/on
