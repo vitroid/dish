@@ -1,7 +1,7 @@
 # dish --- distributed shell
 <img src="wheel.gif">
 
-current version: 1.23
+current version: %%VERSION%%
 
 ----
 
@@ -140,14 +140,14 @@ I'd like to thank to the following people who gave me a lot of valuable opinions
 <li>Seisei Yamaguchi
 </ul>
 Any comments and questions to <a
-href="mailto:vitroid@gmail.com">vitroid@gmail.com</a>.
+href="mailto:%%MAIL%%">%%MAIL%%</a>.
 
 ----
 
 # dish --- 分散シェル
 <img src="wheel.gif">
 
-current version: 1.23
+current version: %%VERSION%%
 
 ---- 
 
