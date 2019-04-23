@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!--<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
 <title>dish</title>
 </head>
 
-<body bgcolor="#ffffff">
+<body bgcolor="#ffffff">-->
 <h1>dish --- distributed shell</h1>
 <img src="wheel.gif">
 current version: 1.22
@@ -130,8 +130,6 @@ Dish behaves as "on" command when it is aliased.
 Dish sometimes fails when the command line includes many quotation
 marks. It will be limitation of shell script and I could not avoid
 this. Rewrinting dish by C-language will solve this problem.
-<h2>Mailing List</h2>
-<a href="http://citroen.chem.nagoya-u.ac.jp/dish/">dish mailing list</a>
 <h2>Analogs</h2>
 <a href="http://www3.informatik.tu-muenchen.de/~zimmerms/ppmake/">PVM Parallel Make (ppmake)</a>
 <h2>Change Log</h2>
@@ -150,4 +148,5 @@ I'd like to thank to the following people who gave me a lot of valuable opinions
 Any comments and questions to <a
 href="mailto:vitroid@gmail.com">vitroid@gmail.com</a>.
 <p>
-</body> </html>
+
+<!--</body> </html>-->
