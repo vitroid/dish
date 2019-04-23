@@ -1,19 +1,17 @@
 BINTARGET	=dish on
-VERSION		=1.22
-MAIL        =vitroid@gmail.com
+VERSION		=1.23
+MAIL	        =vitroid@gmail.com
 DESTDIR		=
 LOCALBIN        =$(HOME)/bin.$(HOSTTYPE)-$(OSTYPE)
-BIN		=$(DESTDIR)/usr/bin
+BIN		=$(DESTDIR)/usr/local/bin
 
-all:	dish on README.html READMEJ.html README.md
+all:	dish on README.md
 on: dish
 	ln dish on
-%: %.in
-	sed -e 's/@VERSION@/$(VERSION)/g' -e 's/@MAIL@/$(MAIL)/g' $< > $@
+%: temp_%
+	sed -e 's/%%VERSION%%/$(VERSION)/g' -e 's/%%MAIL%%/$(MAIL)/g' $< > $@
 wheel.gif:
 	make -f Makefile.sample wheel.gif
-%.md: %.html
-	cp $< $@
 install:
 	install ./dish $(BIN)
 	-rm $(BIN)/on

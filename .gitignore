@@ -3,4 +3,5 @@ seisei
 dish.spec
 on
 *.png
-READMEJ.html
+*.html
+*~
